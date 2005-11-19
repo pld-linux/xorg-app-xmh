@@ -1,12 +1,12 @@
 Summary:	xmh application
 Summary(pl):	Aplikacja xmh
 Name:		xorg-app-xmh
-Version:	0.99.1
+Version:	0.99.2
 Release:	0.1
 License:	MIT
 Group:		X11/Applications
-Source0:	http://xorg.freedesktop.org/releases/X11R7.0-RC1/app/xmh-%{version}.tar.bz2
-# Source0-md5:	113b6584263ef09f16e2a320cbd4c93f
+Source0:	http://xorg.freedesktop.org/releases/X11R7.0-RC2/app/xmh-%{version}.tar.bz2
+# Source0-md5:	145a98d6054671716f22bcdf8ed9840d
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
