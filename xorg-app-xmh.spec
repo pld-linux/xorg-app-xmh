@@ -2,11 +2,12 @@ Summary:	xmh application
 Summary(pl):	Aplikacja xmh
 Name:		xorg-app-xmh
 Version:	1.0.1
-Release:	0.1
+Release:	1
 License:	MIT
 Group:		X11/Applications
-Source0:	http://xorg.freedesktop.org/releases/X11R7.0/src/app/xmh-%{version}.tar.bz2
+Source0:	http://xorg.freedesktop.org/releases/individual/app/xmh-%{version}.tar.bz2
 # Source0-md5:	656bcbdd41818a8b5a9f7dba77a3eeba
+Patch0:		%{name}-man.patch
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
@@ -27,6 +28,7 @@ Aplikacja xmh.
 
 %prep
 %setup -q -n xmh-%{version}
+%patch0 -p1
 
 %build
 %{__aclocal}
@@ -49,7 +51,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc COPYING ChangeLog
-%attr(755,root,root) %{_bindir}/*
-%{_datadir}/X11/app-defaults/*
+%attr(755,root,root) %{_bindir}/xmh
+%{_datadir}/X11/app-defaults/Xmh
 %{_includedir}/X11/bitmaps/*
-%{_mandir}/man1/*.1x*
+%{_mandir}/man1/xmh.1x*
