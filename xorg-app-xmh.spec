@@ -1,5 +1,5 @@
 Summary:	xmh application
-Summary(pl):	Aplikacja xmh
+Summary(pl.UTF-8):   Aplikacja xmh
 Name:		xorg-app-xmh
 Version:	1.0.1
 Release:	1
@@ -23,7 +23,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 xmh application.
 
-%description -l pl
+%description -l pl.UTF-8
 Aplikacja xmh.
 
 %prep
