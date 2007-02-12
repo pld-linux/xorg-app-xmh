@@ -1,5 +1,5 @@
 Summary:	xmh application
-Summary(pl.UTF-8):   Aplikacja xmh
+Summary(pl.UTF-8):	Aplikacja xmh
 Name:		xorg-app-xmh
 Version:	1.0.1
 Release:	1
