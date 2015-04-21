@@ -1,18 +1,20 @@
 Summary:	xmh application - send and read mail with an X interface to MH
 Summary(pl.UTF-8):	Aplikacja xmh - czytanie i wysyłanie poczty poprzez interfejs X do MH
 Name:		xorg-app-xmh
-Version:	1.0.2
+Version:	1.0.3
 Release:	1
 License:	MIT
 Group:		X11/Applications
 Source0:	http://xorg.freedesktop.org/releases/individual/app/xmh-%{version}.tar.bz2
-# Source0-md5:	f5956a63c3d4d4b004b73e8be64d6d6e
+# Source0-md5:	342484425ae92cee33dfb8791b1cc2bf
 Patch0:		%{name}-man.patch
+Patch1:		%{name}-format.patch
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	xorg-data-xbitmaps >= 1.1.0
+BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xorg-lib-libXaw-devel
 BuildRequires:	xorg-lib-libXmu-devel
 BuildRequires:	xorg-lib-libXt-devel >= 1.0.0
@@ -33,6 +35,7 @@ wykonywane poprzez odwołania do pakietu MH.
 %prep
 %setup -q -n xmh-%{version}
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__aclocal}
@@ -57,4 +60,4 @@ rm -rf $RPM_BUILD_ROOT
 %doc COPYING ChangeLog README
 %attr(755,root,root) %{_bindir}/xmh
 %{_datadir}/X11/app-defaults/Xmh
-%{_mandir}/man1/xmh.1x*
+%{_mandir}/man1/xmh.1*

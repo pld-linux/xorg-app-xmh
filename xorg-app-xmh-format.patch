@@ -1,0 +1,58 @@
+--- xmh-1.0.3/popup.c.orig	2015-04-17 09:01:32.000000000 +0200
++++ xmh-1.0.3/popup.c	2015-04-21 16:52:53.858720764 +0200
+@@ -508,6 +508,6 @@
+ 	PopupError((Widget)NULL, ptr); 
+ 	allowPopup = True;
+     } else {
+-	fprintf(stderr, ptr);
++	fputs(ptr, stderr);
+     }
+ }
+--- xmh-1.0.3/xmh.h.orig	2015-04-17 09:01:32.000000000 +0200
++++ xmh-1.0.3/xmh.h	2015-04-21 17:00:41.328711021 +0200
+@@ -69,7 +69,7 @@
+ 
+ #define DEBUG(msg) \
+ 	if (app_resources.debug) \
+-	    {(void)fprintf(stderr, msg); (void)fflush(stderr);}
++	    {(void)fputs(msg, stderr); (void)fflush(stderr);}
+ 
+ #define DEBUG1(msg, arg) \
+ 	if (app_resources.debug) \
+@@ -79,6 +79,10 @@
+ 	if (app_resources.debug) \
+ 	    {(void)fprintf(stderr,msg,arg1,arg2); (void)fflush(stderr);}
+ 
++#define DEBUG3(msg, arg1, arg2, arg3) \
++	if (app_resources.debug) \
++	    {(void)fprintf(stderr,msg,arg1,arg2,arg3); (void)fflush(stderr);}
++
+ typedef int * dp;		/* For debugging. */
+ 
+ typedef FILE* FILEPTR;
+--- xmh-1.0.3/toc.c.orig	2015-04-17 09:01:32.000000000 +0200
++++ xmh-1.0.3/toc.c	2015-04-21 16:58:45.382046771 +0200
+@@ -1136,9 +1136,7 @@
+     h = toc->nummsgs - 1;
+     if (h < 0) {
+ 	if (app_resources.debug) {
+-	    char str[100];
+-	    (void)sprintf(str, "Toc is empty! folder=%s\n", toc->foldername);
+-	    DEBUG( str )
++	    DEBUG1("Toc is empty! folder=%s\n", toc->foldername);
+ 	}
+ 	return NULL;
+     }
+@@ -1152,11 +1150,8 @@
+     if (toc->msgs[l]->msgid == msgid) return toc->msgs[l];
+     if (toc->msgs[h]->msgid == msgid) return toc->msgs[h];
+     if (app_resources.debug) {
+-	char str[100];
+-	(void) sprintf(str,
+-		      "TocMsgFromId search failed! hi=%d, lo=%d, msgid=%d\n",
++	DEBUG3("TocMsgFromId search failed! hi=%d, lo=%d, msgid=%d\n",
+ 		      h, l, msgid);
+-	DEBUG( str )
+     }
+     return NULL;
+ }

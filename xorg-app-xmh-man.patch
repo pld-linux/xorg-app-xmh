@@ -1,5 +1,5 @@
---- xmh-1.0.1/xmh.man.orig	2004-04-23 21:54:58.000000000 +0200
-+++ xmh-1.0.1/xmh.man	2006-10-15 23:33:12.736811500 +0200
+--- xmh-1.0.3/man/xmh.man.orig	2004-04-23 21:54:58.000000000 +0200
++++ xmh-1.0.3/man/xmh.man	2006-10-15 23:33:12.736811500 +0200
 @@ -1316,8 +1316,8 @@
  An example of \fI.xmhcheck\fP file format, for the folders ``inbox'' and
  ``xpert'':
