@@ -1,24 +1,26 @@
 Summary:	xmh application - send and read mail with an X interface to MH
 Summary(pl.UTF-8):	Aplikacja xmh - czytanie i wysyłanie poczty poprzez interfejs X do MH
 Name:		xorg-app-xmh
-Version:	1.0.3
+Version:	1.0.4
 Release:	1
 License:	MIT
 Group:		X11/Applications
-Source0:	http://xorg.freedesktop.org/releases/individual/app/xmh-%{version}.tar.bz2
-# Source0-md5:	342484425ae92cee33dfb8791b1cc2bf
+Source0:	https://xorg.freedesktop.org/releases/individual/app/xmh-%{version}.tar.xz
+# Source0-md5:	a3a83ff2fa3785f229631fa0ee7258fc
 Patch0:		%{name}-man.patch
 Patch1:		%{name}-format.patch
-URL:		http://xorg.freedesktop.org/
+URL:		https://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
 BuildRequires:	pkgconfig >= 1:0.19
+BuildRequires:	tar >= 1:1.22
 BuildRequires:	xorg-data-xbitmaps >= 1.1.0
 BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xorg-lib-libXaw-devel
 BuildRequires:	xorg-lib-libXmu-devel
 BuildRequires:	xorg-lib-libXt-devel >= 1.0.0
 BuildRequires:	xorg-util-util-macros >= 1.8
+BuildRequires:	xz
 Requires:	xorg-lib-libXt >= 1.0.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -57,7 +59,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc COPYING ChangeLog README
+%doc COPYING ChangeLog README.md
 %attr(755,root,root) %{_bindir}/xmh
 %{_datadir}/X11/app-defaults/Xmh
 %{_mandir}/man1/xmh.1*

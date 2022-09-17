@@ -1,7 +1,7 @@
---- xmh-1.0.3/popup.c.orig	2015-04-17 09:01:32.000000000 +0200
-+++ xmh-1.0.3/popup.c	2015-04-21 16:52:53.858720764 +0200
-@@ -508,6 +508,6 @@
- 	PopupError((Widget)NULL, ptr); 
+--- xmh-1.0.4/popup.c.orig	2022-09-17 13:30:54.579318595 +0200
++++ xmh-1.0.4/popup.c	2022-09-17 13:34:32.721470151 +0200
+@@ -508,6 +508,6 @@ void PopupWarningHandler(
+ 	PopupError((Widget)NULL, ptr);
  	allowPopup = True;
      } else {
 -	fprintf(stderr, ptr);
